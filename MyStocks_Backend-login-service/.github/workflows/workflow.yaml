@@ -1,0 +1,42 @@
+name: cloudrun-deploy 
+
+on: 
+  push: 
+    branches: 
+      - login-service     
+env:
+    PROJECT_ID: us-gcp-ame-con-116-npd-1
+    SERVICE_NAME: mystocks-backend
+    REGION: us-west2
+
+jobs: 
+  build: 
+    name: loginservice 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Checkout 
+        uses: actions/checkout@master 
+
+      # Setup gcloud CLI 
+      - uses: google-github-actions/setup-gcloud@v0 
+        with: 
+          service_account_key: ${{ secrets.GCP_SA_KEY}}            
+
+      - name: Configure project id 
+        run: | 
+          gcloud config set project $PROJECT_ID
+      #Build and Push image 
+      - name: Build 
+        run: |
+          docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME-loginservice ./loginservice
+      # Configure docker to use the gcloud command-line tool as a credential helper 
+      - run: | 
+          gcloud auth configure-docker -q 
+      # Push image to Google Container Registry 
+      - name: Push 
+        run: |
+          docker push gcr.io/$PROJECT_ID/$SERVICE_NAME-loginservice
+      - name: Deploy 
+        run: |     
+          gcloud run deploy $SERVICE_NAME-loginservice --port=8081 --image gcr.io/$PROJECT_ID/$SERVICE_NAME-loginservice --min-instances=1 --max-instances=3 --memory=512Mi  --cpu=1 --platform managed --region $REGION --allow-unauthenticated  --vpc-connector hu-conn --add-cloudsql-instances huex-mysql
+          

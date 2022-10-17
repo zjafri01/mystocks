@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "cd40467e-d582-4d11-87f4-030134a5b748",
+		"name": "3user-stock-service APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user-stock-service",
+			"item": [
+				{
+					"name": "localhost:8083/stocks/getWallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ankit1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/stocks/getWallet",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"stocks",
+								"getWallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8083/stocks/addMoney",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ankit123456\",\n    \"walletAmount\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/stocks/addMoney",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"stocks",
+								"addMoney"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8083/stocks/buy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ankit123456\",\n    \"stockId\":1,\n    \"stockName\":\"SBI\",\n    \"quantity\": 10,\n    \"price\": 461.0,\n    \"operationDate\": \"26/05/2022, 15:22:32\",\n    \"operationType\":\"buy\",\n    \"peRatio\": 12.3\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/stocks/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"stocks",
+								"buy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8083/stocks/sell",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ankit1234\",\n    \"stockId\":1,\n    \"stockName\":\"SBI\",\n    \"quantity\": 10,\n    \"price\": 461.0,\n    \"operationDate\": \"26/05/2022, 15:22:32\",\n    \"operationType\":\"sell\",\n    \"peRatio\": 12.3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/stocks/sell",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"stocks",
+								"sell"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8083/stocks/getUserPortfolio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ankit12345676786\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/stocks/getUserPortfolio",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"stocks",
+								"getUserPortfolio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8083/stocks/getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/stocks/getUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"stocks",
+								"getUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8083/stocks/getUserTransactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ankit1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/stocks/getUserTransactions",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"stocks",
+								"getUserTransactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8083/stocks/getUserWalletTransactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ankit1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/stocks/getUserWalletTransactions",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"stocks",
+								"getUserWalletTransactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

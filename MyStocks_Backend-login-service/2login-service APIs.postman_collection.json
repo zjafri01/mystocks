@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "c4367e8a-6fcf-43f7-89d5-8fb2d9867a32",
+		"name": "2login-service APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login-service",
+			"item": [
+				{
+					"name": "localhost:8081/loginUser/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"ankit1234\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/loginUser/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"loginUser",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8081/loginUser/resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"ankit1234\",\n    \"password\": \"123\",\n    \"newPassword\":\"ankit1234\",\n    \"confirmPassword\": \"ankit123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/loginUser/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"loginUser",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8081/loginUser/getUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/loginUser/getUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"loginUser",
+								"getUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8081/loginUser/logout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"ankit1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/loginUser/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"loginUser",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8081/loginUser/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contactNo\": \"929923331\",\n    \"emailId\": \"ankit@gmail.com\",\n    \"panNumber\": \"QQWERRTWS1\",\n    \"password\": \"123\",\n    \"username\":\"new12\",\n    \"securityQuestionIndex\":\"1\",\n    \"securityAnswer\":\"Mother\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/loginUser/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"loginUser",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8081/loginUser/resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"new12\",\n    \"newPassword\":\"newPassss\",\n    \"confirmPassword\":\"newPassss\",\n    \"securityQuestionIndex\":1,\n    \"securityAnswer\":\"Mother\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/loginUser/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"loginUser",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

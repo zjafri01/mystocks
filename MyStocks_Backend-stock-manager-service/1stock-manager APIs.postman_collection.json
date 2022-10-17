@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "48c13451-a559-4837-8627-4d7250751348",
+		"name": "1stock-manager APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "stock-manager",
+			"item": [
+				{
+					"name": "localhost:8761/mystocks/getUsers/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8761/mystocks/getUsers/",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"getUsers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/login/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"new123\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/login/",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/logout/",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"ankit1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/logout/",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/signup/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contactNo\": \"929923331\",\n    \"emailId\": \"ankit@gmail.com\",\n    \"panNumber\": \"QQWERRTWS1\",\n    \"password\": \"123\",\n    \"username\":\"new123\",\n    \"securityQuestionIndex\":\"1\",\n    \"securityAnswer\":\"Mother\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/signup/",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"signup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/getAllStocks/",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8761/mystocks/getAllStocks/",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"getAllStocks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/getWallet/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"new123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/getWallet/",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"getWallet",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/addMoney/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"new123\",\n    \"walletAmount\": 6000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/addMoney/",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"addMoney",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/getUserPortfolio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "UUID",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"new123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/getUserPortfolio",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"getUserPortfolio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/buy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"new123\",\n    \"stockId\":3,\n    \"stockName\":\"SBI\",\n    \"quantity\": 1,\n    \"price\": 461.0,\n    \"operationDate\": \"26/05/2022, 15:22:32\",\n    \"operationType\":\"buy\",\n    \"peRatio\": 12.3\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"buy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/sell",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"new123\",\n    \"stockId\":1,\n    \"stockName\":\"SBI\",\n    \"quantity\": 2,\n    \"price\": 461.0,\n    \"operationDate\": \"26/05/2022, 15:22:32\",\n    \"operationType\":\"sell\",\n    \"peRatio\": 12.3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/sell",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"sell"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/getUserTransactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"new123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/getUserTransactions",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"getUserTransactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/getUserWalletTransactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"new123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/getUserWalletTransactions",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"getUserWalletTransactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8761/mystocks/resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uuid",
+								"value": "0bd5352e-87f0-46c8-ae31-646f4e4ee2da",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"new12\",\n    \"newPassword\":\"newPasssss\",\n    \"confirmPassword\":\"newPasssss\",\n    \"securityQuestionIndex\":1,\n    \"securityAnswer\":\"Mother\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8761/mystocks/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"mystocks",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

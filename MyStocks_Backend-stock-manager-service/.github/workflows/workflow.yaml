@@ -1,0 +1,41 @@
+name: cloudrun-deploy 
+
+on: 
+  push: 
+    branches: 
+      - stock-manager-service     
+env:
+    PROJECT_ID: us-gcp-ame-con-116-npd-1
+    SERVICE_NAME: mystocks-backend
+    REGION: us-west2
+
+jobs: 
+  build: 
+    name: stockmanager 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Checkout 
+        uses: actions/checkout@master 
+
+      # Setup gcloud CLI 
+      - uses: google-github-actions/setup-gcloud@v0 
+        with: 
+          service_account_key: ${{ secrets.GCP_SA_KEY}}            
+
+      - name: Configure project id 
+        run: | 
+          gcloud config set project $PROJECT_ID
+      #Build and Push image 
+      - name: Build 
+        run: |
+          docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME-stockmanager  ./stockmanager
+      # Configure docker to use the gcloud command-line tool as a credential helper 
+      - run: | 
+          gcloud auth configure-docker -q 
+      # Push image to Google Container Registry 
+      - name: Push 
+        run: |
+          docker push gcr.io/$PROJECT_ID/$SERVICE_NAME-stockmanager 
+      - name: Deploy 
+        run: |     
+          gcloud run deploy $SERVICE_NAME-stockmanager --port=8761 --image gcr.io/$PROJECT_ID/$SERVICE_NAME-stockmanager --min-instances=1 --max-instances=3 --memory=512Mi  --cpu=1 --platform managed --region $REGION --allow-unauthenticated  --vpc-connector hu-conn --add-cloudsql-instances huex-mysql
